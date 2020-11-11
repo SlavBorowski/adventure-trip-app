@@ -5,8 +5,8 @@
   <%= f.label :title %><%= f.text_field :title %>
   <%= f.label :duration %><%= f.number_field :duration %>
   <%= f.label :description %><%= f.text_area :description %>
-  <%= f.label :startdate, 'Start Date' %><%= f.datetime_select :startdate%>
-  <%= f.label :enddate, 'End Date' %><%= f.datetime_select :enddate%>
+  <%= f.label :startdate, 'Start Date' %><%= f.date_select :startdate%>
+  <%= f.label :enddate, 'End Date' %><%= f.date_select :enddate%>
   <%= f.label :price %><%= f.number_field :price %>
   
   <%= f.submit %>
