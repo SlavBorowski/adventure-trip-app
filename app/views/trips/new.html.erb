@@ -2,12 +2,12 @@
 
 <%= form_with model: @trip, local: true do |f| %> 
 
-  <%= f.label :title %><%= f.text_field :title %>
-  <%= f.label :duration %><%= f.number_field :duration %>
-  <%= f.label :description %><%= f.text_area :description %>
-  <%= f.label :startdate, 'Start Date' %><%= f.date_select :startdate%>
-  <%= f.label :enddate, 'End Date' %><%= f.date_select :enddate%>
-  <%= f.label :price %><%= f.number_field :price %>
+  <%= f.label :title %><br><%= f.text_field :title %><br>
+  <%= f.label :duration %><br><%= f.number_field :duration %><br>
+  <%= f.label :description %><br><%= f.text_area :description %><br>
+  <%= f.label :startdate, 'Start Date' %><br><%= f.date_select :startdate%><br>
+  <%= f.label :enddate, 'End Date' %><br><%= f.date_select :enddate%><br>
+  <%= f.label :price %><br><%= f.number_field :price %><br>
   
   <%= f.submit %>
 
