@@ -3,10 +3,10 @@
 
 <main>
   <% @trips.each do |trip| %>
-    <%= trip.title %> 
-    <%= trip.duration %> 
-    <%= trip.startdate %> 
-    <%= trip.enddate %> 
-    <%= trip.price %> 
+    Trip: </h4><%= trip.title %> 
+    Duration: <%= trip.duration %> 
+    Trip begins: <%= trip.startdate %> 
+    Trip ends: <%= trip.enddate %> 
+    Price: $<%= trip.price %> 
   <% end %>
 </main>
