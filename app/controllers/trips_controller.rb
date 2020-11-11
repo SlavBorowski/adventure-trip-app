@@ -9,7 +9,7 @@ class TripsController < ApplicationController
   end
   
   def create
-    @trip = Trip.new
+    @trip = Trip.new(trip_params)
     if @trip.save
       redirect_to trips_path
     else
@@ -23,6 +23,13 @@ class TripsController < ApplicationController
   
   def delete
 
+  end  
+
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(:title, :duration, :description, :startdate, :enddate, :price)
   end  
 
 end
