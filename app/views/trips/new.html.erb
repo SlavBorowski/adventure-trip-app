@@ -3,7 +3,7 @@
 <%= form_with model: @trip, local: true do |f| %> 
 
   <%= f.label :title %><br><%= f.text_field :title %><br>
-  <%= f.label :duration %><br><%= f.number_field :duration %><br>
+  <%= f.label :duration, 'Please select the duration in nights (0 for daytrip):' %><br><%= f.select :duration, (0..90) %><br>
   <%= f.label :description %><br><%= f.text_area :description %><br>
   <%= f.label :start_date, 'Start Date' %><br><%= f.date_select :start_date%><br>
   <%= f.label :end_date, 'End Date' %><br><%= f.date_select :end_date%><br>
