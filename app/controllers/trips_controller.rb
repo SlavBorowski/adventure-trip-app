@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+  before_action :authenticate_seller!, except: [:index]
 
   def index
     @trips = Trip.all
