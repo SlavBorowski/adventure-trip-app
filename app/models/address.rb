@@ -1,3 +1,3 @@
 class Address < ApplicationRecord
-  has_many :trips
+  belongs_to :trip
 end
