@@ -5,9 +5,19 @@
   <%= f.label :title %><br><%= f.text_field :title %><br>
   <%= f.label :duration %><br><%= f.number_field :duration %><br>
   <%= f.label :description %><br><%= f.text_area :description %><br>
-  <%= f.label :startdate, 'Start Date' %><br><%= f.date_select :startdate%><br>
-  <%= f.label :enddate, 'End Date' %><br><%= f.date_select :enddate%><br>
+  <%= f.label :start_date, 'Start Date' %><br><%= f.date_select :start_date%><br>
+  <%= f.label :end_date, 'End Date' %><br><%= f.date_select :end_date%><br>
   <%= f.label :price %><br><%= f.number_field :price %><br>
+
+   
+      <%= f.fields_for :address do |ff| %>
+        <%= ff.label :addr1 %><br><%= ff.text_field :addr1 %><br>
+        <%= ff.label :addr2 %><br><%= ff.text_field :addr2 %><br>
+        <%= ff.label :city %><br><%= ff.text_field :city %><br>
+        <%= ff.label :state %><br><%= ff.text_field :state %><br>
+        <%= ff.label :postcode %><br><%= ff.number_field :postcode %><br>
+      <% end %>
+    
   
   <%= f.submit %>
 

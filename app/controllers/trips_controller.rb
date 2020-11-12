@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   
   def new
     @trip = Trip.new
+    @trip.build_address
   end
   
   def create
@@ -29,7 +30,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :duration, :description, :startdate, :enddate, :price)
+    params.require(:trip).permit(:title, :duration, :description, :start_date, :end_date, :price, address_attributes: [ :addr1, :addr2, :city, :state, :postcode ])
   end  
 
 end

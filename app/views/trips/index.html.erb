@@ -1,12 +1,11 @@
 <h1>Index</h1>
 
-
 <main>
   <% @trips.each do |trip| %>
     Trip: </h4><%= trip.title %> 
     Duration: <%= trip.duration  %> <%=" day".pluralize(trip.duration)%>
-    Trip begins: <%= trip.startdate %> 
-    Trip ends: <%= trip.enddate %> 
+    Trip begins: <%= trip.start_date %> 
+    Trip ends: <%= trip.end_date %> 
     Price: $<%= trip.price %> 
   <% end %>
 </main>
