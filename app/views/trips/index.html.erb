@@ -2,11 +2,11 @@
 
 <main>
   <% @trips.each do |trip| %>
-    Trip: </h4><%= trip.title %> 
+    Trip: <%= trip.title %> 
     Duration: <%= trip.duration  %> <%=" day".pluralize(trip.duration)%>
     Trip begins: <%= trip.start_date %> 
     Trip ends: <%= trip.end_date %> 
-    Price: $<%= trip.price %> 
+    Price: <%= number_to_currency(trip.price.to_f) %><br>
   <% end %>
 </main>
 
