@@ -3,6 +3,7 @@
 <main>
   <% @trips.each do |trip| %>
     Trip: <%= trip.title %> 
+    Location: <%= trip.location %> 
     Duration: <%= trip.duration  %> <%=" day".pluralize(trip.duration)%>
     Trip begins: <%= trip.start_date %> 
     Trip ends: <%= trip.end_date %> 
