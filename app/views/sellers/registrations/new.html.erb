@@ -8,6 +8,21 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
+ <div class="field">
+    <%= f.label :business_name %><br />
+    <%= f.text_field :business_name, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.number_field :phone, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :website %><br />
+    <%= f.text_field :website, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
