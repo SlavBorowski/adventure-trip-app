@@ -8,6 +8,7 @@
     Trip begins: <%= trip.start_date %> 
     Trip ends: <%= trip.end_date %> 
     Price: <%= number_to_currency(trip.price.to_f) %><br>
+    <%= link_to "See Details", trip_path(trip.id) %>
   <% end %>
 </main>
 
