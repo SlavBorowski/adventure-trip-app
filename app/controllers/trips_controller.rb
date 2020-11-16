@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
   before_action :authenticate_seller!, except: [:index]
+  before_action :set_trip, only: [:show]
 
   def index
     @trips = Trip.all
@@ -19,9 +20,13 @@ class TripsController < ApplicationController
     end    
   end
 
-  def show
-
+  def listed_trips
+    
   end  
+
+  def show
+  
+  end
   
   def update
 
@@ -37,5 +42,9 @@ class TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:title, :duration, :description, :start_date, :end_date, :price, :location, :activity_id, address_attributes: [ :addr1, :addr2, :city, :state, :postcode ])
   end  
+
+  def set_trip
+    @trip = Trip.find(params[:id])
+  end
 
 end
