@@ -14,7 +14,9 @@
   <%= @trip.address.state %> <%= @trip.address.postcode %>
   
 </div>
-<%= link_to "Back", trips_path %>
-
+<%= link_to "Back", trips_path %> 
+<% if seller_signed_in? && current_seller.id == @trip.seller_id%>
+  <%= link_to "Delete", trip_path(@trip), method: :delete  %>
+<% end %>
 
 

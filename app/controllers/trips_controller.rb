@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
-  before_action :authenticate_seller!, except: [:index]
-  before_action :set_trip, only: [:show]
+  before_action :authenticate_seller!, except: [:index, :show]
+  before_action :set_trip, only: [:show, :destroy]
 
   def index
     @trips = Trip.all
@@ -32,8 +32,10 @@ class TripsController < ApplicationController
 
   end
   
-  def delete
-
+  def destroy
+    @trip.address.destroy
+    @trip.destroy
+    redirect_to trips_path
   end  
 
 
