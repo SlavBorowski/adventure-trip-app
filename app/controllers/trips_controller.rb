@@ -18,6 +18,10 @@ class TripsController < ApplicationController
       render :new
     end    
   end
+
+  def show
+
+  end  
   
   def update
 

@@ -12,6 +12,7 @@
   <%= f.label :activity%><br>
   <%= f.collection_select(:activity_id, Activity.all, :id, :activity_type, { :prompt => 'Select an Activity', :selected => @trip.activity_id }, { class: 'form-control' }) %>
   <br><br>
+  <%= f.label :location %><br><%= f.text_area :location %><br>
   Please enter pick up and drop off address for the trip: <br><br>
   <%= f.fields_for :address do |ff| %>
     <%= ff.label :addr1 %><br><%= ff.text_field :addr1 %><br>
