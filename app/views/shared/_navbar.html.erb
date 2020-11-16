@@ -1,10 +1,15 @@
 <nav>
   <%= link_to "Home", trips_path %>
-  <% if user_signed_in? %>
-    <span class = "navbar"> <p> Welcome back <%= current_user.trainername %>!</p></span>
-    <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+  <% if seller_signed_in? %>
+    <span class = "navbar"> <p> Welcome back <%= current_seller.business_name %>.</p></span>
+    <%= link_to "Sign out", destroy_seller_session_path, method: "delete" %>
+  <% elsif buyer_signed_in? %>
+    <span class = "navbar"> <p> Welcome back <%= current_buyer.frst_name %>.</p></span>
+    <%= link_to "Sign out", destroy_buyer_session_path, method: "delete" %>
   <% else %>
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Sign In User", new_buyer_session_path %>
+    <%= link_to "Sign Up New User", new_buyer_registration_path %>
+    <%= link_to "Sign In Business", new_seller_session_path %>
+    <%= link_to "Sign Up New Business", new_seller_registration_path %>
   <% end %>
 </nav>
