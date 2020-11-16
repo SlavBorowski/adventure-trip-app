@@ -1,10 +1,10 @@
 <nav>
   <%= link_to "Home", trips_path %>
   <% if seller_signed_in? %>
-    Welcome back <%= current_seller.business_name %>.
+    Welcome back <%= current_seller.business_name.split.map(&:capitalize)*' ' %>.
     <%= link_to "Sign out", destroy_seller_session_path, method: "delete" %>
   <% elsif buyer_signed_in? %>
-    Welcome back <%= current_buyer.first_name %>.
+    Welcome back <%= current_buyer.first_name.capitalize %>.
     <%= link_to "Sign out", destroy_buyer_session_path, method: "delete" %>
   <% else %>
     <%= link_to "Sign In User", new_buyer_session_path %>
