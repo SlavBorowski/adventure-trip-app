@@ -1,7 +1,7 @@
 <nav>
   <%= link_to "Home", trips_path %>
   <% if seller_signed_in? %>
-    Welcome back <%= current_seller.business_name.split.map(&:capitalize)*' ' %>.
+    Hi <%= current_seller.business_name.split.map(&:capitalize)*' ' %>.
     <%= link_to "List a New Trip", new_trip_path, method: "get" %>
     <%= link_to "See Listed Trips", new_trip_path, method: "get" %>    
     <%= link_to "Sign out", destroy_seller_session_path, method: "delete" %>
