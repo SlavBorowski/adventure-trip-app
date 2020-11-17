@@ -12,6 +12,7 @@
   <% end %>  
   <%= @trip.address.city %>
   <%= @trip.address.state %> <%= @trip.address.postcode %>
+  <%= image_tag @trip.image %>
   
 </div>
 <%= link_to "Back", trips_path %> 

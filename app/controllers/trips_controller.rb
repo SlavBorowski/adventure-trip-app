@@ -13,6 +13,7 @@ class TripsController < ApplicationController
   
   def create
     @trip = current_seller.trips.new(trip_params)
+
     if @trip.save
       redirect_to trips_path
     else
@@ -31,8 +32,11 @@ class TripsController < ApplicationController
   def update
     @trip.address.destroy
     if @trip.update(trip_params)
-      
-      redirect_to trip_path
+      if @trip.image.attached?
+        redirect_to trip_path
+      else
+        @trip.image.attach(trip_params[:avatar])
+      end  
     else
       render :edit
     end
@@ -49,7 +53,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :duration, :description, :start_date, :end_date, :price, :location, :activity_id, address_attributes: [ :addr1, :addr2, :city, :state, :postcode ])
+    params.require(:trip).permit(:title, :duration, :description, :start_date, :end_date, :price, :location, :activity_id, :image, address_attributes: [ :addr1, :addr2, :city, :state, :postcode ])
   end  
 
   def set_trip

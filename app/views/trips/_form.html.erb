@@ -19,6 +19,9 @@
     <%= ff.label :state %><br><%= ff.text_field :state %><br>
     <%= ff.label :postcode %><br><%= ff.number_field :postcode %><br>
   <% end %>
+  <br>
+
+  <%= f.label 'Please attach an image for your listing:' %><br><%= f.file_field :image %><br><br>
     
   <%= f.submit %>
 
