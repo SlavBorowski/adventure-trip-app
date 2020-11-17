@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_action :authenticate_seller!, except: [:index, :show]
-  before_action :set_trip, only: [:show, :destroy, :update]
+  before_action :set_trip, only: [:show, :destroy, :update, :edit]
 
   def index
     @trips = Trip.all
@@ -20,23 +20,21 @@ class TripsController < ApplicationController
     end    
   end
 
-  def listed_trips
-    
-  end  
-
   def show
   
   end
 
   def edit
-
-  end  
+  
+  end 
   
   def update
-    if @trip.update(user_params)
+    @trip.address.destroy
+    if @trip.update(trip_params)
+      
       redirect_to trip_path
     else
-      render 'edit'
+      render :edit
     end
 
   end

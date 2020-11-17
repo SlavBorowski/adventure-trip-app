@@ -1,4 +1,4 @@
-<%= form_with model: @trip, local: true do |f| %> 
+<%= form_with model: trip, local: true do |f| %> 
 
   <%= f.label :title %><br><%= f.text_field :title %><br><br>
   <%= f.label :duration, 'Please select the duration in nights (0 for daytrip):' %><br><%= f.select :duration, (0..90) %><br><br>
@@ -7,7 +7,7 @@
   <%= f.label :end_date, 'End Date' %><br><%= f.date_select :end_date%><br><br>
   <%= f.label :price %><br><%= f.number_field :price %><br><br>
   <%= f.label :activity%><br>
-  <%= f.collection_select(:activity_id, Activity.all, :id, :activity_type, { :prompt => 'Select an Activity', :selected => @trip.activity_id }, { class: 'form-control' }) %>
+  <%= f.collection_select(:activity_id, Activity.all, :id, :activity_type, { :prompt => 'Select an Activity', :selected => trip.activity_id }, { class: 'form-control' }) %>
   <br><br>
   <%= f.label :location, "Please enter the national park, town or other details for where the trip will take place:" %><br><%= f.text_field :location %><br><br>
   
