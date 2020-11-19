@@ -1,23 +1,30 @@
 <h1>TRIPPR</h1>
 
 <main>
-  <div class="container">
+  
     <h2><%= @trip.title %></h2>
-    Location: <%= @trip.location %><br>
-    Duration: The trip runs for <%= @trip.duration+1 %>  days and <%= @trip.duration %>  nights.<br>
-    Starting: <%= @trip.start_date %> Ending: <%= @trip.end_date %><br>
-    Location: <%= @trip.location %><br>
-    Description: <%= @trip.description %><br>
-    Address (for pick up and drop off):<br>
-    <%= @trip.address.addr1 %>,<br> 
-    <% if @trip.address.addr2 != "" %>
-      <%= @trip.address.addr2 %>,<br>
-    <% end %>  
-    <%= @trip.address.city %>,<br>
-    <%= @trip.address.state %> <%= @trip.address.postcode %><br>
-    <%= image_tag @trip.image, class:"trip-image" %><br>
-    
+    <div class="container">
+      
+      <%= image_tag @trip.image, class:"trip-image" %><br>
+      <div class="wrapper">
+        <span class="title">Location: </span><%= @trip.location %><br>
+        <span class="title">Duration: </span>The trip runs for <%= @trip.duration+1 %>  days and <%= @trip.duration %>  nights.<br>
+        <span class="title">Starting: </span><%= @trip.start_date %> 
+        <span class="title">Ending: </span><%= @trip.end_date %><br>
+        <span class="title">Location: </span><%= @trip.location %><br>
+        <span class="title">Description: </span><%= @trip.description %><br>
+        <span class="title">Address (for pick up and drop off):</span><br><br>
+        <div class="address">
+          <%= @trip.address.addr1 %>,<br> 
+          <% if @trip.address.addr2 != "" %>
+            <%= @trip.address.addr2 %>,<br>
+          <% end %>  
+          <%= @trip.address.city %><br>
+          <%= @trip.address.state %>, <%= @trip.address.postcode %><br>
+        </div>
+      </div>
   </div>
+
   <div class="btm-bar">
   <%= link_to "Back", trips_path %> 
   <% if seller_signed_in? && current_seller.id == @trip.seller_id%>

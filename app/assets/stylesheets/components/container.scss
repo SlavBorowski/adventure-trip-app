@@ -1,0 +1,16 @@
+.container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+
+  .title {
+    margin: 0px 10px;
+    font-weight: bold;
+    color: springgreen;
+  }
+
+  .address {
+    margin-left: 90px;
+  }
+}

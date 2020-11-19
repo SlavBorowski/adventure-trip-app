@@ -1,3 +1,11 @@
 .btm-bar {
-  margin: 20px 0px;
+  margin: 40px auto;
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+
+  a {
+    width: 60px;
+    text-align: center;
+  }
 }
