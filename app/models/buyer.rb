@@ -4,6 +4,6 @@ class Buyer < ApplicationRecord
 
   validates :first_name, presence: true, length: { minimum: 1 }
   validates :last_name, presence: true, length: { minimum: 1 }
-  validates :phone, presence: true, length: { is: 10 }
+  validates :phone, presence: true, length: { is: 10 }, numericality: { greater_than: 0 }
   
 end

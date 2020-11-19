@@ -7,6 +7,6 @@ class Seller < ApplicationRecord
   has_many :trips
 
   validates :business_name, presence: true, length: { minimum: 2 }
-  validates :phone, presence: true, length: { is: 10 }
+  validates :phone, presence: true, length: { is: 10 }, numericality: { greater_than: 0 }
   validates :website, presence: true
 end
