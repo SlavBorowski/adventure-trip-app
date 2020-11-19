@@ -1,15 +1,18 @@
-<h1>Trippr</h1>
+<h1>TRIPPR</h1>
 
 <main>
-
-  <% @trips.each do |trip| %>
-    Trip: <%= trip.title %> 
-    Location: <%= trip.location %> 
-    Duration: <%= trip.duration  %> <%=" day".pluralize(trip.duration)%>
-    Trip begins: <%= trip.start_date %> 
-    Trip ends: <%= trip.end_date %> 
-    Price: <%= number_to_currency(trip.price.to_f) %><br>
-    <%= link_to "See Details", trip_path(trip.id) %><br>
-  <% end %>
+  
+    <% @trips.each do |trip| %>
+    <div class="listing">
+        <span class="list-title"><%= trip.title %></span>
+        <span class="list-title">Location: </span><%= trip.location %> 
+        <span class="list-title">Duration: </span><%= trip.duration  %> <%=" day".pluralize(trip.duration)%>
+        <span class="list-title">Trip begins: </span><%= trip.start_date %> 
+        <span class="list-title">Trip ends: </span><%= trip.end_date %> 
+        <span class="list-title">Price: </span><%= number_to_currency(trip.price.to_f) %><br>
+        <%= link_to "See Details", trip_path(trip.id) %><br>
+      </div> 
+    <% end %>
+  
 </main>
 

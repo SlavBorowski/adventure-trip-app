@@ -1,0 +1,14 @@
+.listing {
+  display: flex;
+  width: 95%;
+  height: 50px;
+  border: 1px solid white;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  border-radius: 13px;
+
+  .list-title {
+   font-weight: bold;
+  }
+}

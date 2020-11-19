@@ -9,8 +9,8 @@
     <%= link_to "Sign out", destroy_buyer_session_path, method: "delete" %>
   <% else %>
     <%= link_to "Sign In User", new_buyer_session_path %>
-    <%= link_to "Sign Up New User", new_buyer_registration_path %>
+    <%= link_to "Sign Up User", new_buyer_registration_path %>
     <%= link_to "Sign In Business", new_seller_session_path %>
-    <%= link_to "Sign Up New Business", new_seller_registration_path %>
+    <%= link_to "Sign Up Business", new_seller_registration_path %>
   <% end %>
 </nav>
