@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_022135) do
+ActiveRecord::Schema.define(version: 2020_11_19_010635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 2020_11_17_022135) do
     t.index ["reset_password_token"], name: "index_sellers_on_reset_password_token", unique: true
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.date "purchase_date"
+    t.decimal "amount", precision: 10, scale: 2
+    t.bigint "trip_id", null: false
+    t.bigint "buyer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
+    t.index ["trip_id"], name: "index_transactions_on_trip_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.integer "duration"
@@ -102,6 +113,8 @@ ActiveRecord::Schema.define(version: 2020_11_17_022135) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "addresses", "trips"
+  add_foreign_key "transactions", "buyers"
+  add_foreign_key "transactions", "trips"
   add_foreign_key "trips", "activities"
   add_foreign_key "trips", "sellers"
 end
