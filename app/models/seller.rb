@@ -5,4 +5,8 @@ class Seller < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
+
+  validates :business_name, presence: true, length: { minimum: 2 }
+  validates :phone, presence: true, length: { is: 10 }
+  validates :website, presence: true
 end

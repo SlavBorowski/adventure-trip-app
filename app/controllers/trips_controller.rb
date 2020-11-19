@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :destroy, :update, :edit]
 
   def index
-    @trips = Trip.all
+      @trips = Trip.all  
   end
   
   def new
